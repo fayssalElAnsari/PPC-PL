@@ -13,7 +13,7 @@
  int stores[S] = [10, 12, 20, 24, 18, 40];
  int ports[P] = [20, 15, 25, 33, 21];
  
- int travelingDistance[S][P] = [
+ float travelingDistance[S][P] = [
 								  [290, 115, 355, 715, 810],
 								  [380, 340, 165, 380, 610],
 								  [505, 530, 285, 220, 450],
@@ -22,7 +22,7 @@
 								  [1072, 1097, 747, 372, 333]
 								];
  
- int pricePerKm = 30; // euros
+ float pricePerKm = 30; // euros
  int nbContainersPerTrip = 2;
  
  // decision variables
@@ -31,6 +31,7 @@
  
  // Objective Function
  // we need to minimize the total cost of transportation
+ // how to get the ceiling of the division transported/perTrip = totalTrips??
  minimize sum(s in S, p in P) ( (transportedContainers[s][p]/nbContainersPerTrip) * travelingDistance[s][p] * pricePerKm );
  
  subject to {
@@ -49,3 +50,7 @@
  	}
  }
  
+ 
+ execute {
+   
+ }
