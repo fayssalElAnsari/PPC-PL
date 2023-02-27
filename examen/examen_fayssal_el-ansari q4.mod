@@ -43,7 +43,7 @@ subject to {
  }  
  
  	// should respect the quota (for month => * 22)
- 	sum (p in P) (producedUnits[p]/productionQuta[p]) <= nbActiveDays + extraDays;
+ 	sum (p in P) (producedUnits[p]/productionQuta[p]) <= (nbActiveDays + extraDays);
  
  	// the maximum number of extra days added shouldn't surpass the given max
  	extraDays <= maximumExtraDays;
