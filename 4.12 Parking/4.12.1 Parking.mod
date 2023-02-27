@@ -13,10 +13,11 @@ float carLengths[C] = [4, 4.5, 5, 4.1, 2.4, 5.2, 3.7, 3.5, 3.2, 4.5, 2.3, 3.3, 3
 dvar int+ street1[C];
 dvar int+ street2[C];
 
-float lengths[C];
+float lengths[i in 1..2];
+
 execute {
   for (var i in 2){
-    le
+    lengths[i] = sum(c in C) (street1[c] * carLengths[c]); 
   }
 }
 
@@ -24,7 +25,7 @@ execute {
 // according to the exercise we need to minimize the length of occupied street
 // meaning the bigger length of occupied distance in both streets 
 // => max or calc diff of occupied lengths
-minimize max(i in 1..2) [ (sum(c in C) (street1[c]*carLengths[c]) ), ( sum(c in C) (street2[c]*carLengths[c])) ] ;
+minimize (max(i in 1..2) lengths[i]);
 
 subject to {
   forall (c in C) {

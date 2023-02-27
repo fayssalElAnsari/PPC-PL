@@ -99,6 +99,12 @@ int nbProductiveDays[M] = [23, 20, 23, 22];
       nbStoredUnits[p][m+1] == nbStoredUnits[p][m] + unitsProduced[p][m+1] - nbSoldUnits[p][m+1];
    }
    
+   // to make sure we don't waste produced units we need to have a condition
+   // the sum of all produced units on all months for each product == soldUnits
+   forall (p in P) {
+     sum (m in M) (unitsProduced[p][m]) == sum (m in M) (nbSoldUnits[p][m]);
+   }
+   
    
    
  }

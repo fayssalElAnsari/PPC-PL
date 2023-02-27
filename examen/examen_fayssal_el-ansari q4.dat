@@ -1,0 +1,21 @@
+/*********************************************
+ * OPL 22.1.0.0 Data
+ * Author: fayss
+ * Creation Date: 27 Feb 2023 at 14:03:58
+ *********************************************/
+nbProducts = 3;
+nbActiveDays = 22;
+
+minimumDemands = [1000, 2000, 1500];
+maximumDemands = [4500, 6500, 5500];
+sellingPrice = [130, 105, 95];
+productionCost = [90.5, 71, 68.5];
+productionQuta = [450, 500, 600];
+
+// q2: outsourcing //
+outsourcingCost = [120.5, 110, 79];
+
+// q3: extra days //
+maximumExtraDays = 4;
+extraDayCost = 6000;
+
